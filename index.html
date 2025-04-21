@@ -3,117 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>To-Do List Interaktif</title>
+  <title>To-Do List Sederhana</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #007bff;
-      --bg: #101320;
-      --card: #1c1f2f;
-      --text: #ffffff;
-      --text-muted: #aaa;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: var(--text);
+      background: #1e1e2f;
+      color: #fff;
       margin: 0;
       padding: 20px;
     }
 
     .container {
-      max-width: 600px;
+      max-width: 500px;
       margin: auto;
-      background: var(--card);
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
+      background: #2a2a40;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     h1 {
       text-align: center;
-      color: var(--primary);
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     input, button {
-      padding: 12px;
+      padding: 10px;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       margin: 5px 0;
-      font-size: 1rem;
     }
 
     input {
       width: 100%;
-      background: #2a2d3c;
-      color: var(--text);
-    }
-
-    input:focus {
-      outline: 2px solid var(--primary);
-    }
-
-    button {
-      background: var(--primary);
-      color: white;
-      cursor: pointer;
-      width: 100%;
-      transition: background 0.2s ease;
-    }
-
-    button:hover {
-      background: #0056b3;
     }
 
     .task {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #2c2f44;
-      padding: 15px;
+      background: #3a3a55;
+      padding: 10px;
       margin: 10px 0;
-      border-radius: 10px;
+      border-radius: 8px;
       animation: fadeIn 0.3s ease;
-      transition: all 0.3s ease;
     }
 
     .task.completed span {
       text-decoration: line-through;
-      color: var(--text-muted);
+      color: #aaa;
     }
 
-    .task span {
-      flex-grow: 1;
-    }
-
-    .actions button {
-      background: transparent;
-      color: var(--primary);
-      border: 1px solid var(--primary);
-      margin-left: 6px;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: background 0.2s ease, color 0.2s ease;
-    }
-
-    .actions button:hover {
-      background: var(--primary);
-      color: white;
+    .task button {
+      margin-left: 5px;
+      font-size: 0.9rem;
+      padding: 5px 8px;
     }
 
     .alert {
       background-color: #ff4d4d;
-      padding: 12px;
-      border-radius: 8px;
+      padding: 10px;
+      border-radius: 6px;
       text-align: center;
-      margin-top: 15px;
+      margin-top: 10px;
       animation: shake 0.3s;
     }
 
@@ -124,13 +77,25 @@
 
     @keyframes shake {
       0%, 100% { transform: translateX(0); }
-      25% { transform: translateX(-6px); }
-      50% { transform: translateX(6px); }
-      75% { transform: translateX(-6px); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
     }
+
+    .actions button {
+      background: #444;
+      color: white;
+      cursor: pointer;
+    }
+
+    .actions button:hover {
+      background: #666;
+    }
+
   </style>
 </head>
 <body>
+
   <div class="container">
     <h1>To-Do List</h1>
 
@@ -138,6 +103,7 @@
     <button onclick="addTask()">Tambah Tugas</button>
 
     <div id="alertBox"></div>
+
     <div id="taskList"></div>
   </div>
 
@@ -209,7 +175,8 @@
       }
     }
 
-    renderTasks();
+    renderTasks(); // Tampilkan saat halaman dibuka
   </script>
+
 </body>
 </html>
